@@ -4,6 +4,7 @@ import {StyleSheet, css} from 'aphrodite';
 
 import shiro from './images/shiro.png';
 import akame from './images/akame.png';
+import arisu from './images/arisu.png';
 import shiina from './images/shiina.png';
 
 export default class Menu extends React.Component{
@@ -25,18 +26,20 @@ export default class Menu extends React.Component{
                 </div>
                 <h1 className={css(style.titleText, style.titleGradient)} id="origin">-</h1>
                 <div className={css(style.buttonContainer)}>
-                    <button className={css(style.buttonElement)} onClick={() => this.props.handleDisplayChange(1)}>
+                    <button className={css(style.buttonElement)}>
                         <img src={shiina} className={css(style.buttonImage)}/>
-                        <h1 className={css(style.buttonTitle)}>M by J</h1>
+                        <h1 className={css(style.buttonTitle)}>Coming Soon !!</h1>
+                        <h2 className={css(style.buttonArrow)}>&#8250;</h2>
+                    </button>
+                    <button className={css(style.buttonElement)} onClick={() => this.props.handleDisplayChange(1)}>
+                        <img src={arisu} className={css(style.buttonImage)}/>
+                        <h1 className={css(style.buttonTitle)}>Flash Math</h1>
                         <h2 className={css(style.buttonArrow)}>&#8250;</h2>
                     </button>
                     <button className={css(style.buttonElement)} onClick={() => this.props.handleDisplayChange(1)}>
                         <img src={akame} className={css(style.buttonImage)}/>
                         <h1 className={css(style.buttonTitle)}>test</h1>
-                    </button>
-                    <button className={css(style.buttonElement)} onClick={() => this.props.handleDisplayChange(1)}>
-                        <img src={akame} className={css(style.buttonImage)}/>
-                        <h1 className={css(style.buttonTitle)}>test</h1>
+                        <h2 className={css(style.buttonArrow)}>&#8250;</h2>
                     </button>
                 </div>
             </div>
@@ -46,7 +49,7 @@ export default class Menu extends React.Component{
 
 const style = StyleSheet.create({
     container: {
-        backgroundColor: "#E7CFEA",
+        backgroundColor: "#c196b8",
         position: 'relative'
     },
 
@@ -64,7 +67,7 @@ const style = StyleSheet.create({
     },
 
     titleGradient:{
-        backgroundImage: 'linear-gradient(45deg, #efe633, #998CD9)',
+        backgroundImage: 'linear-gradient(45deg, #ac76a9, #ac76a9)',
         backgroundClip: 'text',
         color:'rgba(0,0,0,0)',
 
@@ -83,7 +86,7 @@ const style = StyleSheet.create({
     },
 
     buttonContainer:{
-        width:800,
+        width:1000,
         height:'fit-content',
         paddingTop:30,
         paddingBottom:30,
@@ -95,11 +98,22 @@ const style = StyleSheet.create({
         display: 'grid',
         gridTemplateColumns: 'auto',
 
-        backgroundColor: '#D1A6D8'
+        transition:'0.2s',
+
+        backgroundImage: 'linear-gradient(45deg, #d7d16c, #e3dd88)',
+
+        ':hover':{
+            transition:'0.2s',
+
+            boxShadow: '50px 50px #e3dd88',
+            transform: 'translate(-20px, -20px)'
+        }
     },
 
     buttonElement:{
-        width:600,
+        backgroundColor:"#eda6a7",
+
+        width:700,
         height:150,
 
         margin:'auto',
@@ -116,24 +130,32 @@ const style = StyleSheet.create({
         transition:'0.3s',
 
         ':hover':{
-            backgroundColor:'black',
-            transition:'0.3s'
+            backgroundColor:'#d26e70',
+
+            transform:'translate(-60px,-5px)',
+            transition:'0.2s',
+
+            boxShadow:'120px 30px #eda6a7'
         },
 
         ':hover img':{
-            transform:'translate(-70px, 0)',
-            transition:'0.14s'
+            transform:'translate(-30px, 0)',
+            transition:'0.2s'
         },
 
         ':hover h1':{
-            transform:'translate(-140px, 0)',
-            transition:'0.2s'
+            transform:'translate(-70px, 0)',
+            transition:'0.4s'
         },
 
         ':hover h2':{
             opacity:100,
-            transition:'0.5s'
-        }   
+            transition:'1s'
+        },
+
+        ':active':{
+
+        }
     },
 
     buttonImage:{
@@ -150,7 +172,7 @@ const style = StyleSheet.create({
     },
 
     buttonTitle:{
-        width:200,
+        width:400,
         
         fontSize:50,
 

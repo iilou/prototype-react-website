@@ -2,12 +2,14 @@ import React from 'react';
 
 import Menu from './Menu.js';
 import ImageCollage from './ImageCollage.js';
+import FlashMath from './FlashMath/FlashMath.js';
+
 
 export default class App extends React.Component{
     constructor(){
         super();
-        this.displays = [<Menu handleDisplayChange={this.handleDisplayChange}/>, <ImageCollage handleDisplayChange={this.handleDisplayChange}/>];
-        this.state = {display:0};
+        this.displays = [<Menu handleDisplayChange={this.handleDisplayChange}/>, <FlashMath handleDisplayChange={this.handleDisplayChange}/>];
+        this.state = {display:1};
     }
 
     handleDisplayChange = d => {
